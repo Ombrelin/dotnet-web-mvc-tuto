@@ -8,10 +8,10 @@ builder.Services.AddControllersWithViews();
 
 // Database
 builder.Services.AddDbContext<ApplicationDbContext>(options => {
-    string databaseHost = Environment.GetEnvironmentVariable("DATABSE_HOST");
-    string databaseName = Environment.GetEnvironmentVariable("DATABSE_NAME");
+    string databaseHost = Environment.GetEnvironmentVariable("DATABASE_HOST");
+    string databaseName = Environment.GetEnvironmentVariable("DATABASE_NAME");
     string databaseUsername = Environment.GetEnvironmentVariable("DATABASE_USERNAME");
-    string databasePassword = Environment.GetEnvironmentVariable("DATABSE_PASSWORD");
+    string databasePassword = Environment.GetEnvironmentVariable("DATABASE_PASSWORD");
 
     var connectionString = $"server={databaseHost};database={databaseName};user={databaseUsername};password={databasePassword}";
     Console.WriteLine(connectionString);

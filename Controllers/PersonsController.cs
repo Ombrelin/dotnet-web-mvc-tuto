@@ -11,4 +11,27 @@ public class PersonsController : Controller {
         this.context = context;
     }
 
+    [HttpGet]
+    public IActionResult PersonsPage(){
+        List<Person> persons = this.context.Persons.ToList();
+
+        return View("persons", persons);
+    }
+
+    [HttpPost("add")]
+    public IActionResult AddPerson(Person p){
+        this.context.Persons.Add(p);
+        this.context.SaveChanges();
+
+        return this.PersonsPage();
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult GetOnePerson(Guid id){
+        Person person = this.context.Persons
+            .Where(p => p.Id == id)
+            .First();
+
+        return View("person", person);
+    }
 }

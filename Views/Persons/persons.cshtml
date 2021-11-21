@@ -1,0 +1,10 @@
+@foreach (Person person in @Model)
+{
+    <p><a href="/persons/@person.Id">@person.FirstName - @person.LastName</a></p>
+}
+
+<form action="/persons/add" method="post">
+    <input name="FirstName" type="text"/>
+    <input name="LastName" type="text"/>
+    <input value="Create" type="submit"/>
+</form>
