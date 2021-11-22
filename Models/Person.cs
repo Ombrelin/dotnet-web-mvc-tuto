@@ -1,3 +1,5 @@
+using System;
+
 namespace net_web_tuto.Models {
     public class Person {
         public Guid Id { get; internal set; }
