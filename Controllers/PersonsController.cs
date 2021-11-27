@@ -26,7 +26,7 @@ public class PersonsController : Controller {
         this.context.Persons.Add(p);
         this.context.SaveChanges();
 
-        return this.PersonsPage();
+        return new RedirectResult("/persons");
     }
 
     [HttpGet("{id}")]

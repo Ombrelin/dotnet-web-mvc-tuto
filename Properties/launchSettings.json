@@ -14,7 +14,11 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7229;http://localhost:5089",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_HOST": "localhost",
+        "DATABASE_NAME" : "test-db",
+        "DATABASE_USERNAME": "root",
+        "DATABASE_PASSWORD": "monMdpTresSecret"
       }
     },
     "IIS Express": {
