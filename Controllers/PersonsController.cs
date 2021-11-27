@@ -21,7 +21,7 @@ public class PersonsController : Controller {
         return View("persons", persons);
     }
 
-    [HttpPost("add")]
+    [HttpPost()]
     public IActionResult AddPerson(Person p){
         this.context.Persons.Add(p);
         this.context.SaveChanges();
@@ -32,8 +32,7 @@ public class PersonsController : Controller {
     [HttpGet("{id}")]
     public IActionResult GetOnePerson(Guid id){
         Person person = this.context.Persons
-            .Where(p => p.Id == id)
-            .First();
+            .First(p => p.Id == id);
 
         return View("person", person);
     }
